@@ -1986,6 +1986,11 @@ mission "Hai Reveal [A14] A Time of Trouble"
 		conversation
 			`A message comes through just as you arrive at Mirfak, and it's from Teeneep.`
 			`	It reads: "While this situation is ongoing with Choot'k here away from his people, you should not go near the Unfettered. It will likely be seen as duplicitous, which would be a disaster."`
+			`	to display
+					"reputation: Hai (Unfettered)" < 0
+			`	It reads: "While this situation is ongoing with Choot'k here away from his people, you should not do anything to provoke the Unfettered."`
+				to display
+					"reputation: Hai (Unfettered)" >= 0
 	npc accompany save
 		government "Merchant"
 		system "Ultima Thule"
