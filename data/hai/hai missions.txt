@@ -446,27 +446,12 @@ mission "Expanding Business [1]"
 			`	"Captain <last>, fantastic to see you again! I noticed you right away when I laid my eyes upon you and I must say, I'd like to thank you again for what you've done."`
 			`	The man is David Turner, who was involved in the movie production during the Hai crisis. Almost reflexively he goes to grab a business card from his pocket but then seems to remember and puts it back away. Seems to be exactly the same card as last time though.`
 			`	"Now Captain, if you have a moment, I'd like to make a proposition to you." Turner turns around and waves his arm across the crowd of people in the spaceport. "You see all the humans here? About one out of every four of these people only arrived here after war broke out through the wormhole. Captains who knew of the Hai came flocking here in droves after the Navy entered Kornephoros, hoping to avoid any troubles that the war would bring. Some captains returned after the war ended, but most stayed, and I see a massive market opportunity in that."`
-			branch rich
-				"net worth" >= 4000000000
 			
 			choice
 				`	"What kind of market opportunity?"`
 					goto opportunity
 				`	"Sorry, but I don't have the time to talk about this."`
-					goto walk
-			
-			label rich
-			choice
-				`	"What kind of market opportunity?"`
-					goto opportunity
-				`	"You're only worth three billion credits? Why shouldn't I pursue your opportunity on my own?"`
-				`	"Sorry, but I don't have the time to talk about this."`
-					goto walk
-			
-			`	"Of course you're worth more than me, Captain <last>, but you are no business owner. I have the connections and skills, but a name like yours will always help.`
-				goto opportunity
-			
-			label walk
+						
 			`	You try to walk away, but Turner stops you by grabbing your arm and continues to talk.`
 			
 			label opportunity
