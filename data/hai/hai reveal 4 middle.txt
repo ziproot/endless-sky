@@ -1814,9 +1814,6 @@ mission "Hai Reveal [A13] A New Elder"
 		dialog `As you prepare your ship you are informed that you will be traveling to <stopovers> before going to <planet>.`
 	on stopover
 		dialog `It seems Teeneep has got the elders to agree to the deal with the Unfettered. A large Unfettered fleet joins you here.`
-	on complete
-		require "Quantum Keystone"
-		# Apparently I can't make this either Keystones *or* Key Stones, so it'll have to be a Hai one.
 	on visit
 		dialog `You have either not stopped on Everhope as instructed, or you have left Sayari behind. Remember, her superstition has gotten the better of her under these pressing circumstances, so you must have a Quantum Keystone installed for her to travel with you.`
 	on fail
@@ -1827,7 +1824,14 @@ mission "Hai Reveal [A13] A New Elder"
 		"reputation: Hai Merchant (Human)" -= 10000
 		"reputation: Hai Merchant (Sympathizers)" -= 10000
 		# Maybe we'll put in an alternative pathway later.
-
+	to complete
+		or
+			has "outfit (installed): Quantum Keystone"
+			has "outfit (installed): Quantum Key Stone"
+			has "outfit (installed): Shield Beetle Pendant"
+			has "outfit (installed): Tree Skeleton Key Stone"
+		# Apparently I can't make this either Keystones *or* Key Stones, so it'll have to be a Hai one.
+		# Yeah you can - ziproot
 
 mission "Hai Reveal [A13-A] Unfettered Pickup"
 	landing
