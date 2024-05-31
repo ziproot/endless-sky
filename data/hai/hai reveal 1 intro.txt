@@ -903,6 +903,7 @@ mission "Hai Leaks Response 4"
 	to offer
 		has "Hai Leaks Response 3: done"
 	on offer
+		event "battle of waypoint"
 		conversation
 			`When you land on Allhome, you are greeted by the quartermaster of the local Hai security forces. You're not an expert at judging Hai ages, but he appears to be a little younger than expected.`
 			`	"Captain <last>! I heard you were coming to assist."`
@@ -940,7 +941,7 @@ mission "Hai Leaks Response 4"
 		government "Pirate"
 		personality staying disables plunders harvests
 		system "Waypoint"
-		fleet "Marauder fleet IX" 4
+		fleet "Marauder fleet IX" 5
 		fleet "Hired Guns" 1
 	npc kill
 		government "Pirate"
@@ -981,15 +982,18 @@ mission "Hai Leaks Response 4"
 	on fail
 		dialog `You have declined an essential narrative mission. If you would like to continue, revert to the autosave or another earlier snapshot of the game.`
 	
+event "battle of waypoint"
+	system "Waypoint"
+		fleet "Small Human Merchants (Hai)" 80000
+
 event "waypoint pirates vanquished"
 	# Update pirate and anti-pirate spawns in Waypoint and Heia Due
 	system "Waypoint"
 		government "Hai"
-		add fleet "Anti-Pirate Hai (Wormhole Travel)" 1000
-		remove fleet "Marauder fleet IX"
-		remove fleet "Anti-Pirate Hai (No Wormhole Travel)"
-		remove fleet "Large Northern Pirates"
-		remove fleet "Large Core Pirates"
+		fleet "Anti-Pirate Hai (Wormhole Travel)" 1000
+		fleet "Small Human Merchants (Hai)" 12000
+		fleet "Large Human Merchants (Hai)" 18000
+		fleet "Hai Surveillance" 2000
 	system "Heia Due"
 		remove fleet "Marauder fleet IX"
 		remove fleet "Large Northern Pirates"
