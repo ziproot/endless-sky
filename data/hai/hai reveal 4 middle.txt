@@ -225,24 +225,7 @@ mission "Hai Reveal [A03a] Symbol Identification"
 		
 event "alondo symbol timer"
 
-
 mission "Hai Reveal [A03a1]"
-	name "Lead from Alondo"
-	description "Meet Alondo on <planet> to get the lead for your investigation, but only when you have no other business to attend to."
-	source
-		government "Republic" "Syndicate" "Hai" "Free Worlds" "Independent"
-		attributes "spaceport"
-	destination "Hai-home"
-	to offer
-		has "event: alondo symbol timer"
-		has "Hai Reveal: Pirate Troubles [0]: done"
-	on offer
-		dialog `A message from Alondo informs you that he has a tenuous lead he can give you. It also says to look for him only when you're not busy with other business.`
-	to complete
-		never
-
-
-mission "Hai Reveal [A03a2]"
 	invisible
 	source
 		government "Republic" "Syndicate" "Hai" "Free Worlds" "Independent"
@@ -931,10 +914,7 @@ mission "Hai Reveal [A06a] The Calm"
 			`	Alondo leans forward on his desk. "And <last>, I don't know what's going on, but if you won't even tell me, it must be dangerous. Please, be careful."`
 			choice
 				`	"I will."`
-					accept
-	on accept
-		fail "Hai Reveal [A03a1]"
-		
+					accept		
 		
 		
 mission "Hai Reveal [A07] Deliver the Relays"
