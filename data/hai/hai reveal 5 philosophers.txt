@@ -18,7 +18,7 @@ mission "Hai Reveal [B01] Information Blackout"
 	source "Sunracer"
 	clearance
 	to offer
-		has "Hai Reveal [A13] A New Elder: done"
+		has "Hai Reveal [A14] A Time of Trouble: done"
 	to complete
 		never
 	on offer
