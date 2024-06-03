@@ -941,7 +941,7 @@ mission "Hai Leaks Response 4"
 		government "Pirate"
 		personality staying disables plunders harvests
 		system "Waypoint"
-		fleet "Marauder fleet IX" 5
+		fleet "Marauder fleet IX" 6
 		fleet "Hired Guns" 1
 	npc kill
 		government "Pirate"
