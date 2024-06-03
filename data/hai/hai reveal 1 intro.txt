@@ -998,9 +998,8 @@ event "hai ladybug available"
 	shipyard "Mon Ki i'Hiya Basics"
 		add "Ladybug"
 
-
 mission "Hai Leaks Response 4A"
-	name "Recover the Geocoris"
+	name "Rescue the Kidnapped Hai"
 	description "If possible, disable and board the stolen Geocoris supporting the pirates in Waypoint and return the captive Hai to Allhome."
 	blocked `You are told that the Geocoris has 21 bunks, but you do not have that much space on your ship. If you want to rescue the captured Hai, make sure you have enough space for all 21 Hai.`
 	landing
@@ -1015,26 +1014,12 @@ mission "Hai Leaks Response 4A"
 		personality staying marked mute
 		system "Waypoint"
 		ship "Geodesic Geocoris (Phylactery)" "Phylactery"
+		# The conversation must be separate from on board for the ship to self destruct
+		conversation
+			`After successfully boarding the Geocoris and defeating the pirate crews guarding the captured Hai, you take the relieved Hai back to your ship, just before the Geocoris begins to explode.`
+				launch
 		on board
 			unmark "Waypoint"
-			conversation
-				`After successfully boarding the Geocoris and defeating the pirate crews guarding the captured Hai, you take the relieved Hai back to your ship, just before it begins to explode.`
-					launch
-
-# Success means the Geodesic Geocoris may become available to purchase specially later on. Not less than 2 years later.
-mission "Hai Leaks Response 4B"
-	landing
-	invisible
-	source "Allhome"
-	to offer
-		has "ship model (all): Geodesic Geocoris"
-	on offer
-		log `Successfully rescued the kidnapped Hai and reclaimed the Geocoris. This ship has been modified in ways that aren't of Hai origin, and which don't appear to be fully functional.`
-		event "returned geocoris" 730
-		fail
-
-event "returned geocoris"
-
 ship "Geodesic Geocoris"
 	plural "Geodesic Geocoris"
 	sprite "ship/geodesic geocoris"
