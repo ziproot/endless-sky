@@ -1036,7 +1036,7 @@ ship "Geodesic Geocoris"
 		"heat dissipation" 0.4
 		"fuel capacity" 800
 		"cargo space" 1003
-		"outfit space" 627
+		"outfit space" 629
 		"weapon capacity" 250
 		"engine capacity" 134
 		"energy capacity" 5200
@@ -1052,12 +1052,12 @@ ship "Geodesic Geocoris"
 		"Boulder Reactor"
 		"Hai Ravine Batteries"
 		"Outfits Expansion"
-		"Liquid Nitrogen Cooler"
+		"Liquid Helium Cooler"
 		"Quantum Keystone"
 		"Pulse Rifle" 14
 		`"Benga" Atomic Thruster`
 		`"Bufaer" Atomic Steering`
-		"S-970 Regenerator" 3
+		"S-970 Regenerator" 2
 		Hyperdrive
 	turret "Electron Turret"
 	turret "Electron Turret"
