@@ -1001,12 +1001,12 @@ event "hai ladybug available"
 mission "Hai Leaks Response 4A"
 	name "Rescue the Kidnapped Hai"
 	description "If possible, disable and board the stolen Geocoris supporting the pirates in Waypoint and return the captive Hai to Allhome."
-	blocked `You are told that the Geocoris has 21 bunks, but you do not have that much space on your ship. If you want to rescue the captured Hai, make sure you have enough space for all 21 Hai.`
+	blocked `You are told that the Geocoris has 18 bunks, but you do not have that much space on your ship. If you want to rescue the captured Hai, make sure you have enough space for all 18 Hai.`
 	landing
 	source "Allhome"
 	mark "Waypoint"
 	destination "Allhome"
-	passengers 21
+	passengers 18
 	to offer
 		has "Hai Leaks Response 3: done"
 	npc board
@@ -1027,15 +1027,15 @@ ship "Geodesic Geocoris"
 	attributes
 		category "Utility"
 		"cost" 23540000
-		"shields" 26600
+		"shields" 22100
 		"hull" 7100
 		"required crew" 27
 		"bunks" 48
-		"mass" 955
+		"mass" 1355
 		"drag" 21.3
-		"heat dissipation" 0.4
+		"heat dissipation" .25
 		"fuel capacity" 800
-		"cargo space" 1003
+		"cargo space" 503
 		"outfit space" 629
 		"weapon capacity" 250
 		"engine capacity" 134
@@ -1051,7 +1051,6 @@ ship "Geodesic Geocoris"
 		"AR120 Reverse Thruster" 2
 		"Boulder Reactor"
 		"Hai Ravine Batteries"
-		"Outfits Expansion"
 		"Liquid Helium Cooler"
 		"Quantum Keystone"
 		"Pulse Rifle" 14
@@ -1076,7 +1075,7 @@ ship "Geodesic Geocoris"
 	explode "large explosion" 50
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "This modified Geocoris has identical cargo capacity, but it has been extensively modified with a hybrid Human-Hai operating system. It has additional shield emitters in a geodesic pattern over its main cargo wings, and has additional cargo and outfit space, making it significantly more survivable than a traditional Geocoris and at least as useful."
+	description "This Geocoris has been extensively modified and contains a hybrid Human-Hai operating system. It has additional shield emitters in a geodesic pattern over its main cargo wings, and has additional outfit space, making it significantly more survivable than a traditional Geocoris."
 
 
 # The spike in interest leads to ladybugs appearing in the Hai Merchant (Human) fleets.
