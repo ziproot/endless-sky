@@ -1013,7 +1013,7 @@ mission "Hai Leaks Response 4A"
 		government "Pirate"
 		personality staying marked mute
 		system "Waypoint"
-		ship "Geodesic Geocoris (Phylactery)" "Phylactery"
+		ship "Geodesic Geocoris" "Phylactery"
 		# The conversation must be separate from on board for the ship to self destruct
 		conversation
 			`After successfully boarding the Geocoris and defeating the pirate crews guarding the captured Hai, you take the relieved Hai back to your ship, just before the Geocoris begins to explode.`
@@ -1036,44 +1036,35 @@ ship "Geodesic Geocoris"
 		"heat dissipation" 0.4
 		"fuel capacity" 800
 		"cargo space" 1003
-		"outfit space" 555
+		"outfit space" 582
 		"weapon capacity" 250
 		"engine capacity" 134
 		"energy capacity" 5200
-		"shield generation" 6.0
-		"shield energy" 8.8
-		"hull repair rate" 0.8
-		"hull energy" 0.8
-		"hull heat" 1.2
-		"integrated control systems" -1
-		"integrated systems core" 1
 		weapon
 			"blast radius" 400
 			"shield damage" 4000
 			"hull damage" 2000
 			"hit force" 6000
 	outfits
+		"Electron Turret" 3
 		"Chameleon Anti-Missile" 2
-		"Quad Blaster Turret" 2
-		"Pulse Turret" 2
-		
-		"Quantum Keystone"
-		"Boulder Reactor" 2
-		"Liquid Helium Cooler"
-		"Security Station" 2
-		"Pulse Rifle" 30
-
-		"A525 Atomic Steering"
-		`"Biroo" Atomic Thruster`
 		"AR120 Reverse Thruster" 2
+		"Boulder Reactor"
+		"Hai Ravine Batteries"
+		"Outfits Expansion"
+		"Liquid Nitrogen Cooler"
+		"Quantum Keystone"
+		"Pulse Rifle" 14
+		`"Benga" Atomic Thruster`
+		`"Bufaer" Atomic Steering`
+		"S-970 Regenerator"
+		"Jump Drive"
 		Hyperdrive
-
-	turret 0 -82.5 "Pulse Turret"
-	turret -95 -17 "Chameleon Anti-Missile"
-	turret 95 -17 "Chameleon Anti-Missile"
-	turret -29 3 "Quad Blaster Turret"
-	turret 29 3 "Quad Blaster Turret"
-	turret 0 91.5 "Pulse Turret"
+	turret "Electron Turret"
+	turret "Electron Turret"
+	turret "Chameleon Anti-Missile"
+	turret "Chameleon Anti-Missile"
+	turret "Electron Turret"
 	engine -95 41.5 0.9
 	engine 95 41.5 0.9
 	engine 1 154.5 0.9
@@ -1086,29 +1077,6 @@ ship "Geodesic Geocoris"
 	explode "large explosion" 50
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "This modified Geocoris has identical cargo capacity, but is modeled off one that was the result of an alien technology being merged with a hybrid Human-Hai operating system. It has additional shield emitters in a geodesic pattern over its main cargo wings, and a crucial element of the ship's system core is not manufactured, but grown from initial samples taken from the first occurrence. This means that some systems are built-in and unable to be removed, and also that it is substantially more expensive than its regular version. It is, however, significantly more survivable."
-	
-ship "Geodesic Geocoris" "Geodesic Geocoris (Phylactery)"
-	outfits
-		"Electron Turret" 3
-		"Chameleon Anti-Missile" 2
-		"AR120 Reverse Thruster" 2
-		"Boulder Reactor"
-		"Hai Ravine Batteries"
-		"Outfits Expansion"
-		"Large Heat Shunt"
-		"Quantum Keystone"
-		"Pulse Rifle" 14
-		`"Benga" Atomic Thruster`
-		`"Bufaer" Atomic Steering`
-		"Jump Drive"
-		Hyperdrive
-		"Failed Control System"
-	turret "Electron Turret"
-	turret "Electron Turret"
-	turret "Chameleon Anti-Missile"
-	turret "Chameleon Anti-Missile"
-	turret "Electron Turret"
 	description "This modified Geocoris has identical cargo capacity, but is the result of an alien technology being merged with a hybrid Human-Hai operating system. It has additional shield emitters in a geodesic pattern over its main cargo wings, and some kind of integrated system core which seems to have something of a life of its own. As such, some systems are built-in and unable to be removed. Nevertheless, it is significantly more survivable than a traditional Geocoris and at least as useful."
 
 
