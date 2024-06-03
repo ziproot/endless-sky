@@ -898,7 +898,7 @@ mission "Hai Leaks Response 4"
 	name "Defeat the Black Lich"
 	description "Defeat Black Lich's Marauder Leviathan at <waypoints>, then return to <origin>."
 	source "Allhome"
-	waypoint "Waypoint"
+	mark "Waypoint"
 	destination "Allhome"
 	to offer
 		has "Hai Leaks Response 3: done"
@@ -945,9 +945,11 @@ mission "Hai Leaks Response 4"
 		fleet "Hired Guns" 1
 	npc kill
 		government "Pirate"
-		personality staying target
+		personality marked staying target
 		system "Waypoint"
 		ship "Marauder Leviathan (Weapons)" "Black Lich"
+		on kill
+			unmark "Waypoint"
 	on visit
 		dialog `You have returned, but the fate of the pirates and the captured Hai is still in doubt. Ensure that the Black Lich is defeated and that the fate of the captured Hai, whether deceased or safely with you, is certainly known.`
 	to complete
@@ -1012,7 +1014,7 @@ mission "Hai Leaks Response 4A"
 	description "If possible, recover the stolen Geocoris supporting the pirates in Waypoint and return it to Allhome."
 	landing
 	source "Allhome"
-	waypoint "Waypoint"
+	mark "Waypoint"
 	destination "Allhome"
 	to offer
 		has "Hai Leaks Response 3: done"
@@ -1022,6 +1024,8 @@ mission "Hai Leaks Response 4A"
 		system "Waypoint"
 		ship "Geodesic Geocoris (Phylactery)" "Phylactery"
 		dialog `After successfully boarding the Geocoris and defeating its pirate crews, you are greeted by the relieved captive Hai. You send crew aboard to fly the ship and promise to return them safely to Allhome.`
+		on capture
+			unmark "Waypoint"
 #	on fail
 #		dialog `You have failed to recover the Geocoris. This is not critical, but does have long-term consequences. If you want the most complete ending, revert to the autosave or another earlier snapshot of the game.`
 # Too hand-holdy for present implementation and content.
