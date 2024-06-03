@@ -454,10 +454,10 @@ mission "Hai Reveal: Pirate Troubles [2]"
 	landing
 	name "Scar's Legion"
 	description "You've pieced together enough information to find out that the Scar's Legion hideout is in one of four systems in the Far North. Search those systems for the gang's hideout and confront them."
-	waypoint "Danoa"
-	waypoint "Rajak"
-	waypoint "Sumar"
-	waypoint "Hassaleh"
+	mark "Danoa"
+	mark "Rajak"
+	mark "Sumar"
+	mark "Hassaleh"
 	to offer
 		"hr scar's legion information" >= 2
 	on offer
@@ -466,6 +466,14 @@ mission "Hai Reveal: Pirate Troubles [2]"
 			`After having visited various pirate worlds asking about Scar's Legion, you believe that you know where their hideout is.`
 			`	You know that the leader of Scar's Legion used to talk about wanting a hollowed out asteroid as a base. You also know that Scar's Legion has recently been very active in the uninhabited systems of the Far North. You conclude that the gang's hideout is likely an asteroid located in one of a few systems that are in proximity to the wormhole that leads to the Hai. You mark <waypoints> on your map and get ready to confront them.`
 				accept
+	on enter "Danoa"
+		unmark "Danoa"
+	on enter "Rajak"
+		unmark "Rajak"
+	on enter "Sumar"
+		unmark "Sumar"
+	on enter "Hassaleh"
+		unmark "Hassaleh"
 	to complete
 		never
 	to fail
