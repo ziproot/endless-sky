@@ -1036,7 +1036,7 @@ ship "Geodesic Geocoris"
 		"heat dissipation" 0.4
 		"fuel capacity" 800
 		"cargo space" 1003
-		"outfit space" 582
+		"outfit space" 627
 		"weapon capacity" 250
 		"engine capacity" 134
 		"energy capacity" 5200
@@ -1057,8 +1057,7 @@ ship "Geodesic Geocoris"
 		"Pulse Rifle" 14
 		`"Benga" Atomic Thruster`
 		`"Bufaer" Atomic Steering`
-		"S-970 Regenerator"
-		"Jump Drive"
+		"S-970 Regenerator" 3
 		Hyperdrive
 	turret "Electron Turret"
 	turret "Electron Turret"
@@ -1077,7 +1076,7 @@ ship "Geodesic Geocoris"
 	explode "large explosion" 50
 	explode "huge explosion" 20
 	"final explode" "final explosion large"
-	description "This modified Geocoris has identical cargo capacity, but is the result of an alien technology being merged with a hybrid Human-Hai operating system. It has additional shield emitters in a geodesic pattern over its main cargo wings, and some kind of integrated system core which seems to have something of a life of its own. As such, some systems are built-in and unable to be removed. Nevertheless, it is significantly more survivable than a traditional Geocoris and at least as useful."
+	description "This modified Geocoris has identical cargo capacity, but it has been extensively modified with a hybrid Human-Hai operating system. It has additional shield emitters in a geodesic pattern over its main cargo wings, and has additional cargo and outfit space, making it significantly more survivable than a traditional Geocoris and at least as useful."
 
 
 # The spike in interest leads to ladybugs appearing in the Hai Merchant (Human) fleets.
