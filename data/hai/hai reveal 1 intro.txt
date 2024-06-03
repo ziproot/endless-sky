@@ -923,7 +923,7 @@ mission "Hai Leaks Response 4"
 					accept
 				`	"We'll give those pirates a lesson they won't soon forget."`
 					accept
-				`	"I'll beat the Lich, and do my best to capture the Geocoris and bring them safely home."`
+				`	"I'll beat the Lich, and do my best to board the Geocoris and bring them safely home."`
 					accept
 	# Escorts manually defined to have weapons comparatively suitable for disabling, as would be appropriate in a mission where the *hopeful* outcome is a rescue.
 	npc
