@@ -961,25 +961,18 @@ mission "Hai Leaks Response 4"
 		event "humans adopt ladybugs" 20 30
 		log `Defeated the "Black Lich." They had managed to kidnap a number of Hai straight off the planet with a combination of trickery and speed. Rewarded well.`
 		conversation
-			branch "saved geocoris"
-				has "ship model (all): Geodesic Geocoris"
+			branch "rescued hai"
+				has "Hai Leaks Response 4A: done"
 			`Shortly after you return, the Hai quartermaster thanks you profusely. "The Allhome government has authorized a reward of <payment> for helping to route the pirate problem," he explains while handing you the credits.`
 			`	He sighs deeply. "It is a shame though that the kidnapped Hai could not be saved, but the other Hai captains tell me it was a mess out there."`
 			`	In an oddly human gesture that feels very deliberate, he places one of his furry hands comfortingly on your shoulder, "I'm sure you did all you could."`
 				goto end
-			label "saved geocoris"
-			`You have defeated the Black Lich and also successfully reclaimed the Geocoris and, in doing so, rescued the kidnapped Hai! On your way back to <planet> the crew you sent across to fly it home reported that something is different about it... It appears that it has been modified with systems of some kind, which are not of Hai design. It also appears that perhaps not everything about those systems is working wholly as intended.`
-			`	As you disembark you spot the Hai quartermaster checking on the Hai disembarking from the Geocoris, and after a short while he approaches you. "Captain <last>, I cannot thank you enough for your rescue of our kidnapped people. You're a hero to them. The Allhome government has also authorized a reward of <payment> for helping to relieve the pirate problem," he explains while handing you the credits.`
-			`	"Lucky for you, the merchant who owned the Geocoris has already filed the insurance claim, so you get to keep the ship as a trophy.`
-			`	"I do need to do a full security scan of it to complete all the incident paperwork before I let it go, though, so if you have any business on-world here, please take your time."`
+			label "rescued hai"
+			`You have defeated the Black Lich and also rescued the kidnapped Hai! `
+			`	As you disembark you spot the Hai quartermaster checking on the Hai disembarking your ship, and after a short while he approaches you. "Captain <last>, I cannot thank you enough for your rescue of our kidnapped people. You're a hero to them. The Allhome government has also authorized a reward of <payment> for helping to relieve the pirate problem," he explains while handing you the credits.`
 			label end
 			`	"In any event, let's hope a more permanent solution can be devised soon. In the meantime, the local dealers have decided to start selling the Ladybugs again. I hear it's something about a spike in interest among the humans here, so feel free to have a look at them. I shouldn't get too distracted though, I'm sure they'll be waiting for you back on Hai-home."`
-			branch "saved geocoris2"
-				has "ship model (all): Geodesic Geocoris"
 			`	With a final nod of thanks he departs to attend to his business, leaving you free to go about your own.`
-				decline
-			label "saved geocoris2"
-			`	With a final nod of thanks he departs to attend to his business, leaving you free to wander the spaceport for a couple of hours until they release your new ship.`
 				decline
 	on fail
 		dialog `You have declined an essential narrative mission. If you would like to continue, revert to the autosave or another earlier snapshot of the game.`
@@ -1006,30 +999,27 @@ event "hai ladybug available"
 		add "Ladybug"
 
 
-# It is impossible to implement a "capture and return npc" mission.
-# Once the ship is captured, the mission is completed.
-# The NPC is a special ship model used to determine if you managed to get it back safely.
 mission "Hai Leaks Response 4A"
 	name "Recover the Geocoris"
-	description "If possible, recover the stolen Geocoris supporting the pirates in Waypoint and return it to Allhome."
+	description "If possible, disable and board the stolen Geocoris supporting the pirates in Waypoint and return the captive Hai to Allhome."
+	blocked `You are told that the Geocoris has 21 bunks, but you do not have that much space on your ship. If you want to rescue the captured Hai, make sure you have enough space for all 21 Hai.`
 	landing
 	source "Allhome"
 	mark "Waypoint"
 	destination "Allhome"
+	passengers 21
 	to offer
 		has "Hai Leaks Response 3: done"
-	npc capture
+	npc board
 		government "Pirate"
 		personality staying marked mute
 		system "Waypoint"
 		ship "Geodesic Geocoris (Phylactery)" "Phylactery"
-		dialog `After successfully boarding the Geocoris and defeating its pirate crews, you are greeted by the relieved captive Hai. You send crew aboard to fly the ship and promise to return them safely to Allhome.`
-		on capture
+		on board
 			unmark "Waypoint"
-#	on fail
-#		dialog `You have failed to recover the Geocoris. This is not critical, but does have long-term consequences. If you want the most complete ending, revert to the autosave or another earlier snapshot of the game.`
-# Too hand-holdy for present implementation and content.
-
+			conversation
+				`After successfully boarding the Geocoris and defeating the pirate crews guarding the captured Hai, you take the relieved Hai back to your ship, just before it begins to explode.`
+					launch
 
 # Success means the Geodesic Geocoris may become available to purchase specially later on. Not less than 2 years later.
 mission "Hai Leaks Response 4B"
