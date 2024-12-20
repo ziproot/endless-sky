@@ -406,7 +406,7 @@ void System::Load(const DataNode &node, Set<Planet> &planets)
 							}
 							musicConflict = true;
 							Music.file = "";
-							Music.silentDuration = std::numeric_limits<int>:max;
+							Music.silentDuration = std::numeric_limits<int>::max;
 							if (grand.Size() > 1)
 								Music.silentDuration = grand.Value(1);
 							Music.isSilent = true;
