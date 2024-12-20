@@ -85,6 +85,10 @@ public:
 	const Government *GetGovernment() const;
 	// Get the name of the ambient audio to play in this system.
 	const std::string &MusicName() const;
+	// Return how much time, in seconds, the system is silent for.
+	double SilentDuration();
+	// Defines whether or not the system is silent.
+	bool isSilent();
 
 	// Get the list of "attributes" of the planet.
 	const std::set<std::string> &Attributes() const;
@@ -207,7 +211,7 @@ private:
 	std::string name;
 	Point position;
 	const Government *government = nullptr;
-	std::string music;
+	std::vector<std::string> music;
 
 	// All possible hyperspace links to other systems.
 	std::set<const System *> links;
