@@ -136,7 +136,7 @@ void System::Load(const DataNode &node, Set<Planet> &planets)
 			if(key == "government")
 				government = nullptr;
 			else if(key == "music")
-				music.clear();
+				Music = {};
 			else if(key == "attributes")
 				attributes.clear();
 			else if(key == "link")
@@ -370,7 +370,56 @@ void System::Load(const DataNode &node, Set<Planet> &planets)
 		else if(key == "government")
 			government = GameData::Governments().Get(value);
 		else if(key == "music")
-			music = value;
+			if (!child.HasChildren())
+			{
+				Music.file = value;
+				Music.isSilent = false;
+				Music.silentDuration = 0;
+			}
+			else
+			{
+				bool musicConflict = false;
+				for (const DataNode &grand: child)
+				{
+					// More than the maximum number of children allowed
+					if (grand.Size() > 1)
+					{
+						child.PrintTrace("Skipping conflicting attribute:");
+						break;
+					}
+					const string &musicKey = grand.Token(0);
+					switch (musicKey)
+					{
+						case "file":
+							if (musicConflict)
+							{
+								Music = {};
+								child.PrintTrace("Skipping conflicting attribute:");
+								break;
+							}
+							musicConflict = true;
+							Music.file = grand.Token(1);
+							Music.silentDuration = 0;
+							Music.isSilent = false;
+							break;
+						case "silent":
+							if (musicConflict)
+							{
+								Music = {};
+								child.PrintTrace("Skipping conflicting attribute:");
+								break;
+							}
+							musicConflict = true;
+							Music.file = "";
+							Music.silentDuration = grand.Token(1);
+							Music.isSilent = true;
+							break;
+						default:
+							grand.PrintTrace("Skipping unrecognized attribute:");
+							break;
+					}
+				}
+			}
 		else if(key == "habitable")
 			habitable = child.Value(valueIndex);
 		else if(key == "jump range")
