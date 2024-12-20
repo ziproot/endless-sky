@@ -647,10 +647,20 @@ const Government *System::GetGovernment() const
 // Get the name of the ambient audio to play in this system.
 const string &System::MusicName() const
 {
-	return music;
+	return Music.file;
 }
 
+// Return how much time, in seconds, the system is silent for.
+int SilentDuration()
+{
+	return Music.silentDuration;
+}
 
+// Defines whether or not the system is silent.
+double IsSilent()
+{
+	return Music.isSilent;
+}
 
 // Get the list of "attributes" of the planet.
 const set<string> &System::Attributes() const
