@@ -370,6 +370,7 @@ void System::Load(const DataNode &node, Set<Planet> &planets)
 		else if(key == "government")
 			government = GameData::Governments().Get(value);
 		else if(key == "music")
+		{
 			if (!child.HasChildren())
 			{
 				Music.file = value;
@@ -381,12 +382,6 @@ void System::Load(const DataNode &node, Set<Planet> &planets)
 				bool musicConflict = false;
 				for (const DataNode &grand: child)
 				{
-					// More than the maximum number of children allowed
-					if (grand.Size() > 1)
-					{
-						child.PrintTrace("Skipping conflicting attribute:");
-						break;
-					}
 					const string &musicKey = grand.Token(0);
 					switch (musicKey)
 					{
@@ -411,7 +406,9 @@ void System::Load(const DataNode &node, Set<Planet> &planets)
 							}
 							musicConflict = true;
 							Music.file = "";
-							Music.silentDuration = grand.Token(1);
+							Music.silentDuration = std::numeric_limits<int>:max;
+							if (grand.Size() > 1)
+								Music.silentDuration = grand.Value(1);
 							Music.isSilent = true;
 							break;
 						default:
@@ -420,6 +417,7 @@ void System::Load(const DataNode &node, Set<Planet> &planets)
 					}
 				}
 			}
+		}
 		else if(key == "habitable")
 			habitable = child.Value(valueIndex);
 		else if(key == "jump range")
