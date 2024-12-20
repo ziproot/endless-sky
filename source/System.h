@@ -88,7 +88,7 @@ public:
 	// Return how much time, in seconds, the system is silent for.
 	int SilentDuration();
 	// Defines whether or not the system is silent.
-	bool isSilent();
+	bool IsSilent();
 
 	// Get the list of "attributes" of the planet.
 	const std::set<std::string> &Attributes() const;
