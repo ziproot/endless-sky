@@ -211,11 +211,11 @@ private:
 	std::string name;
 	Point position;
 	const Government *government = nullptr;
-	struct {
+	struct Music {
 		bool isSilent;
 		int silentDuration;
 		std::string file;
-	} music;
+	};
 
 	// All possible hyperspace links to other systems.
 	std::set<const System *> links;
