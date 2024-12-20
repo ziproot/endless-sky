@@ -86,7 +86,7 @@ public:
 	// Get the name of the ambient audio to play in this system.
 	const std::string &MusicName() const;
 	// Return how much time, in seconds, the system is silent for.
-	double SilentDuration();
+	int SilentDuration();
 	// Defines whether or not the system is silent.
 	bool isSilent();
 
