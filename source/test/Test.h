@@ -13,10 +13,10 @@ You should have received a copy of the GNU General Public License along with
 this program. If not, see <https://www.gnu.org/licenses/>.
 */
 
-#ifndef ENDLESS_SKY_AC_TEST_H_
-#define ENDLESS_SKY_AC_TEST_H_
+#pragma once
 
 #include "../Command.h"
+#include "../ConditionAssignments.h"
 #include "../ConditionSet.h"
 
 #include <SDL2/SDL.h>
@@ -29,9 +29,9 @@ this program. If not, see <https://www.gnu.org/licenses/>.
 class DataNode;
 class Planet;
 class PlayerInfo;
-class UI;
 class System;
 class TestContext;
+class UI;
 
 
 
@@ -62,6 +62,8 @@ public:
 			BRANCH,
 			// Step that calls another test to handle some generic common actions.
 			CALL,
+			// Step that prints a debug-message to the output.
+			DEBUG,
 			// Step that adds game-data, either in the config-directories or in the game directly.
 			INJECT,
 			// Step that performs input (key, mouse, command). Does cause the game to step (to process the inputs).
@@ -85,9 +87,10 @@ public:
 		// Variables for travelpan/navigate steps.
 		std::vector<const System *> travelPlan;
 		const Planet *travelDestination = nullptr;
-		// For applying condition changes, branching based on conditions or
-		// checking asserts (similar to Conversations).
-		ConditionSet conditions;
+		// For applying condition changes.
+		ConditionAssignments assignConditions;
+		// For branching based on conditions or checking asserts (similar to Conversations).
+		ConditionSet checkConditions;
 		// Labels to jump to in case of branches. We could optimize during
 		// load to look up the step numbers (and provide integer step numbers
 		// here), but we can also use the textual information during error/
@@ -136,5 +139,3 @@ private:
 	std::map<std::string, unsigned int> jumpTable;
 	std::vector<TestStep> steps;
 };
-
-#endif
